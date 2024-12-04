@@ -5,6 +5,7 @@ use paste::paste;
 import_solver!(1);
 import_solver!(2);
 import_solver!(3);
+import_solver!(4);
 
 pub trait Solver<const DAY: u8> {
     fn part1(input: &str) -> impl Display;
@@ -47,6 +48,7 @@ macro_rules! import_solver {
                 fn part1(input: &str) -> impl std::fmt::Display {
                     [<dec $day>]::part1(input)
                 }
+                
                 fn part2(input: &str) -> impl std::fmt::Display {
                     [<dec $day>]::part2(input)
                 }

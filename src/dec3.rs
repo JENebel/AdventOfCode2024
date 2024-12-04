@@ -9,7 +9,7 @@ pub fn part1(input: &str) -> i32 {
             let b = &b[..b.len() - 1];
             a.parse::<i32>().unwrap() * b.parse::<i32>().unwrap()
         })
-        .sum::<i32>()
+        .sum()
 }
 
 pub fn part2(input: &str) -> i32 {
@@ -30,5 +30,5 @@ pub fn part2(input: &str) -> i32 {
             }
             0
         })
-        .sum::<i32>()
+        .sum()
 }

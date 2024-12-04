@@ -8,4 +8,5 @@ fn run_all() {
     Dec1::solve();
     Dec2::solve();
     Dec3::solve();
+    Dec4::solve();
 }
