@@ -29,12 +29,13 @@ pub fn part2(input: &str) -> usize {
     let (graph, inputs) = load(input);
     inputs.iter().filter(|line| !valid(&graph, line)).map(|nums| {
         let mut nums = nums.clone();
-        while !valid(&graph, &nums) {
-            for i in 0..nums.len() {
-                if let Some(missing) = graph[nums[i]].iter().find(|r| nums.contains(r) && !&nums[..i].contains(r)) {
-                    let missing_idx = nums.iter().position(|x| x == missing).unwrap();
-                    nums.swap(i, missing_idx);
-                }
+        let mut i = 0;
+        while i < nums.len() {
+            if let Some(missing) = graph[nums[i]].iter().find(|r| nums.contains(r) && !&nums[..i].contains(r)) {
+                let missing_idx = nums.iter().position(|x| x == missing).unwrap();
+                nums.swap(i, missing_idx);
+            } else {
+                i += 1;
             }
         }
         nums
