@@ -17,12 +17,10 @@ pub fn part1(input: &str) -> usize {
 }
 
 fn valid(dag: &Rules, nums: &Vec<usize>) -> bool {
-    let mut seen = Vec::new();
-    for p in nums.iter() {
-        if !dag[*p].iter().all(|r| !nums.contains(r) || seen.contains(r)) {
+    for (i, p) in nums.iter().enumerate() {
+        if !dag[*p].iter().all(|r| !nums.contains(r) || nums[..i].contains(r)) {
             return false
         }
-        seen.push(*p)
     }
     true
 }
