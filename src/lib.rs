@@ -1,3 +1,5 @@
+#![feature(array_windows)]
+
 use std::fmt::Display;
 
 use paste::paste;
@@ -6,6 +8,7 @@ import_solver!(1);
 import_solver!(2);
 import_solver!(3);
 import_solver!(4);
+import_solver!(5);
 
 pub trait Solver<const DAY: u8> {
     fn part1(input: &str) -> impl Display;
