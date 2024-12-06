@@ -1,5 +1,3 @@
-#![feature(array_windows)]
-
 use std::fmt::Display;
 
 use paste::paste;
@@ -9,6 +7,7 @@ import_solver!(2);
 import_solver!(3);
 import_solver!(4);
 import_solver!(5);
+import_solver!(6);
 
 pub trait Solver<const DAY: u8> {
     fn part1(input: &str) -> impl Display;
@@ -17,7 +16,6 @@ pub trait Solver<const DAY: u8> {
     fn solve_part_1() {
         let input = std::fs::read_to_string(format!("inputs/dec{}.input", DAY)).unwrap();
 
-        print!(" Part 1...");
         let before = std::time::Instant::now();
         let solution = Self::part1(&input);
         let after = std::time::Instant::now();
@@ -27,7 +25,6 @@ pub trait Solver<const DAY: u8> {
     fn solve_part_2() {
         let input = std::fs::read_to_string(format!("inputs/dec{}.input", DAY)).unwrap();
 
-        print!(" Part 2...");
         let before = std::time::Instant::now();
         let solution = Self::part2(&input);
         let after = std::time::Instant::now();
