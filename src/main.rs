@@ -1,8 +1,8 @@
 use aoc_2024::*;
 
 fn main() {
-    Dec7::solve();
-   // run_all();
+   // Dec7::solve();
+    run_all();
 }
 
 fn run_all() {
@@ -12,4 +12,5 @@ fn run_all() {
     Dec4::solve();
     Dec5::solve();
     Dec6::solve();
+    Dec7::solve();
 }
