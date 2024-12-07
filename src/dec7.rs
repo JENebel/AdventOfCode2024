@@ -14,8 +14,8 @@ pub fn part1(input: &str) -> u64 {
     parse_input(input).iter().filter(|x| is_possible_add_mul(x.0, &x.1)).map(|x| x.0).sum()
 }
 
-fn is_possible_add_mul(target: u64, nums: &Vec<u64>) -> bool {
-    match nums.as_slice() {
+fn is_possible_add_mul(target: u64, nums: &[u64]) -> bool {
+    match nums {
         [a] => *a == target,
         nums => {
             is_possible_add_mul(target, &[&[nums[0] + nums[1]], &nums[2..]].concat()) ||
@@ -28,8 +28,8 @@ pub fn part2(input: &str) -> u64 {
     parse_input(input).iter().filter(|x| is_possible_add_mul_comb(x.0, &x.1)).map(|x| x.0).sum()
 }
 
-fn is_possible_add_mul_comb(target: u64, nums: &Vec<u64>) -> bool {
-    match nums.as_slice() {
+fn is_possible_add_mul_comb(target: u64, nums: &[u64]) -> bool {
+    match nums {
         [a] => *a == target,
         nums => {
             is_possible_add_mul_comb(target, &[&[nums[0] + nums[1]], &nums[2..]].concat()) ||
