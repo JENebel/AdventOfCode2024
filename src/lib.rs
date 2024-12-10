@@ -11,6 +11,7 @@ import_solver!(6);
 import_solver!(7);
 import_solver!(8);
 import_solver!(9);
+import_solver!(10);
 
 pub trait Solver<const DAY: u8> {
     fn part1(input: &str) -> impl Display;
