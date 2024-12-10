@@ -81,18 +81,10 @@ fn search(grid: &Grid, head: usize) -> usize {
                 );
         }
 
-        if height == 9 {
-            return new_queue.len()
-        } else {
-            queue.clear();
-        }
-
-        for elem in new_queue {
-            queue.insert(elem);
-        }
+        queue = new_queue
     }
 
-    unreachable!()
+    queue.len()
 }
 
 pub fn part1(input: &str) -> usize {
@@ -134,16 +126,8 @@ fn search2(grid: &Grid, head: usize) -> usize {
                 );
         }
 
-        if height == 9 {
-            return new_queue.len()
-        } else {
-            queue.clear();
-        }
-
-        for elem in new_queue {
-            queue.push(elem);
-        }
+        queue = new_queue;
     }
 
-    unreachable!()
+    queue.len()
 }
